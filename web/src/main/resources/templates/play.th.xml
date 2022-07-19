@@ -1,0 +1,14 @@
+<thlogic>
+    <attr th:replace="~{fragments/head :: headFragment}" sel="#headId"/>
+    <attr sel="#gameTitle" th:text="#{game.title}"/>
+    <attr th:text="${__${mm}__}" th:with="mm=${T(org.niles87.util.AttributeNames).MAIN_MESSAGE}"
+          sel="#mainMessage"/>
+    <attr th:text="${__${rm}__}" th:with="rm=${T(org.niles87.util.AttributeNames).RESULT_MESSAGE}"
+          sel="#resultMessage"/>
+    <attr th:with="action=${T(org.niles87.util.GameMappings).PLAY}" th:action="${action}"
+          sel="#gameForm"/>
+    <attr th:replace="~{fragments/footer :: footerFragment}"
+          sel="#footerId"/>
+    <attr sel="#guessLabel" th:text="#{game.guess.label}" />
+    <attr sel="#submit" th:value="#{game.submit}" />
+</thlogic>

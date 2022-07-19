@@ -1,0 +1,9 @@
+<thlogic>
+    <attr th:replace="~{fragments/head :: headFragment}" sel="#headId"/>
+    <attr th:text="#{game.title}" sel="h1"/>
+    <attr th:text="#{game.gameover}" sel="#gameOverTitle"/>
+    <attr th:text="${__${rm}__}" th:with="rm=${T(org.niles87.util.AttributeNames).RESULT_MESSAGE}" sel="#resMessage"/>
+    <attr th:text="#{game.playagain}" th:with="url=${T(org.niles87.util.GameMappings).RESET}" th:href="${url}" sel="#playAgain"/>
+    <attr th:text="#{game.home}" th:with="url=${T(org.niles87.util.GameMappings).HOME}" th:href="${url}" sel="#homeLink"/>
+    <attr th:replace="~{fragments/footer :: footerFragment}" sel="#footerId"/>
+</thlogic>
